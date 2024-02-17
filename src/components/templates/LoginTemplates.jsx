@@ -1,7 +1,6 @@
-
-function LoginTemplates({children}) {
+function LoginTemplates({ children, name }) {
   return (
-		<section className="h-full gradient-form bg-gray-200 md:h-screen">
+    <section className="h-full gradient-form bg-gray-200 md:h-screen">
       <div className="container m-auto py-12 px-6 h-full">
         <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
           <div className="xl:w-10/12">
@@ -16,10 +15,10 @@ function LoginTemplates({children}) {
                         alt="logo"
                       />
                       <h4 className="text-xl font-semibold mt-1 mb-8 pb-1">
-                        Iniciar Sesión
+                        {name}
                       </h4>
-                    </div>                
-                    { children}
+                    </div>
+                    {children}
                   </div>
                 </div>
                 <div className="bg-gradient lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none">
@@ -36,7 +35,7 @@ function LoginTemplates({children}) {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default LoginTemplates
+export default LoginTemplates;

@@ -1,14 +1,12 @@
+import { Link, useNavigate } from "react-router-dom"
+import LoginTemplates from "../templates/LoginTemplates"
+import { useState } from "react"
 import axios from "axios"
 import { API_URL } from "../../constants/env"
-import { setToken } from "../../helpers/auth"
-import { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import "../../styles/index.css"
-import LoginTemplates from "../templates/LoginTemplates"
 
-const Login = () => {
-  const nav = useNavigate()
-  const [error, setError] = useState()
+const Register = () => {
+  const nav = useNavigate();
+  const [error, setError] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -17,22 +15,31 @@ const Login = () => {
     const data = {
       email: e.target.email.value,
       password: e.target.password.value,
+			details: {
+				fullname: e.target.fullname.value,
+			}
     }
 
     axios
-      .post(`${API_URL}/public/login`, data)
-      .then((res) => {
-        setToken(res.data.data.token)
-        nav("/")
+      .post(`${API_URL}/public/users`, data)
+      .then(() => {
+        nav("/login")
       })
       .catch((error) => {
         setError(error.response.data.data)
       })
-  };
+  }
 
   return (
-    <LoginTemplates name="Iniciar Sesion1">
+    <LoginTemplates name="Registro Usuario">
       <form onSubmit={handleSubmit}>
+        <div className="mb-4">
+          <input 
+						type="text" 
+						placeholder="Nombre Completo" 
+						name="fullname" 
+						required />
+        </div>
         <div className="mb-4">
           <input
             type="email"
@@ -51,15 +58,15 @@ const Login = () => {
         </div>
         <div className="text-center pt-1 mb-12 pb-1">
           <button className="bg-gradient w-full" type="submit">
-            Ingresar
+            Crear cuenta
           </button>
-          <Link className="text-gray-500" to="/registro">
-            ¿Deseas registrarte?
+          <Link className="text-gray-500" to="/login">
+            ¿Ya tiene cuenta? Inicie sesión
           </Link>
         </div>
         {error && (
           <p className="text-center p-2 bg-red-100 text-red-800">
-            {error ? "Usuario Incorrecto" : ""}
+            {error?.response?.data.error[0].message}
           </p>
         )}
       </form>
@@ -67,4 +74,4 @@ const Login = () => {
   )
 }
 
-export default Login;
+export default Register;
