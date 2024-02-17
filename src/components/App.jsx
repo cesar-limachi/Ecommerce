@@ -1,4 +1,4 @@
-import { API_URL } from "../env"
+import { API_URL } from "../../env"
 
 function App() {
   return (
@@ -9,6 +9,6 @@ function App() {
 
     </>
   )
-}
+} 
 
 export default App
