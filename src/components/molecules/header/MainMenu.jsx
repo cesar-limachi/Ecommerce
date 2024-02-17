@@ -9,8 +9,7 @@ const MainMenu = () => {
 				</li>
         <li>
 					<Link to="/productos" >Productos</Link>
-				</li>
-        
+				</li>      
       </ul>
     </nav>
   )
