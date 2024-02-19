@@ -31,17 +31,20 @@ const Register = () => {
   }
 
   return (
-    <LoginTemplates name="Registro Usuario">
+    <LoginTemplates title="Registro Usuario">
       <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <input 
-						type="text" 
-						placeholder="Nombre Completo" 
-						name="fullname" 
-						required />
+        <div className="mb-4 ">
+          <input
+            className="appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
+            type="text"
+            placeholder="Nombre Completo"
+            name="fullname"
+            required
+          />
         </div>
         <div className="mb-4">
           <input
+            className="appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
             type="email"
             placeholder="Correo electrónico"
             name="email"
@@ -50,6 +53,7 @@ const Register = () => {
         </div>
         <div className="mb-4">
           <input
+            className="appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
             type="password"
             placeholder="Contraseña"
             name="password"
@@ -57,7 +61,7 @@ const Register = () => {
           />
         </div>
         <div className="text-center pt-1 mb-12 pb-1">
-          <button className="bg-gradient w-full" type="submit">
+          <button className="bg-gradient w-full p-3" type="submit">
             Crear cuenta
           </button>
           <Link className="text-gray-500" to="/login">
@@ -71,7 +75,7 @@ const Register = () => {
         )}
       </form>
     </LoginTemplates>
-  )
+  );
 }
 
 export default Register;

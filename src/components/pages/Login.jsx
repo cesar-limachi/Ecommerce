@@ -31,10 +31,11 @@ const Login = () => {
   };
 
   return (
-    <LoginTemplates name="Iniciar Sesion1">
+    <LoginTemplates title="Iniciar Sesion">
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <input
+            className="appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
             type="email"
             placeholder="Correo electrónico"
             name="email"
@@ -43,6 +44,7 @@ const Login = () => {
         </div>
         <div className="mb-4">
           <input
+            className="appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-indigo-500"
             type="password"
             placeholder="Contraseña"
             name="password"
@@ -50,7 +52,7 @@ const Login = () => {
           />
         </div>
         <div className="text-center pt-1 mb-12 pb-1">
-          <button className="bg-gradient w-full" type="submit">
+          <button className="bg-gradient w-full p-3" type="submit">
             Ingresar
           </button>
           <Link className="text-gray-500" to="/registro">
@@ -64,7 +66,7 @@ const Login = () => {
         )}
       </form>
     </LoginTemplates>
-  )
+  );
 }
 
 export default Login;

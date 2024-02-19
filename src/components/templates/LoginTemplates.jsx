@@ -1,4 +1,4 @@
-function LoginTemplates({ children, name }) {
+function LoginTemplates({ children, title }) {
   return (
     <section className="h-full gradient-form bg-gray-200 md:h-screen">
       <div className="container m-auto py-12 px-6 h-full">
@@ -15,7 +15,7 @@ function LoginTemplates({ children, name }) {
                         alt="logo"
                       />
                       <h4 className="text-xl font-semibold mt-1 mb-8 pb-1">
-                        {name}
+                        { title }
                       </h4>
                     </div>
                     {children}

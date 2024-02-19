@@ -35,9 +35,11 @@ module.exports = {
         "no-mixed-spaces-and-tabs": "off",
         "no-undef": "off",
         "no-unused-vars": "off",
-        "prettier/prettier": [ error, {
+        "prettier/prettier": [ "error", {
             "semi": false
-        }]
+        }],
+        "prettier/prettier": "off",
+        "react/jsx-key": "off"
 
     }
 }
